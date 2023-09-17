@@ -1,0 +1,7 @@
+.recipeContainer{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-color: rgb(19, 81, 135);
+}
