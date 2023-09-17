@@ -19,8 +19,6 @@ const Home = () => {
     fetchData();
   }, []);
 
-  console.log(foodItems);
-  console.log(searchResult);
   // api fetching
   let fetchData = async () => {
     try {
@@ -49,16 +47,20 @@ const Home = () => {
   // search functionality part
 
   useEffect(() => {
+    console.log("i am chaning", state.searchRecipe);
     searchFunctionality();
   }, [state.searchRecipe]);
 
   let searchFunctionality = () => {
     let results = foodItems.filter((card) => {
-      return card.recipe.label.startsWith(state.searchRecipe);
+      return card.recipe.label
+        .toLowerCase()
+        .startsWith(state.searchRecipe.toLowerCase());
     });
     setSearchResult(results);
-    console.log("Search resut is ", searchResult);
   };
+
+  console.log(foodItems);
 
   return (
     <div className="appContainer">

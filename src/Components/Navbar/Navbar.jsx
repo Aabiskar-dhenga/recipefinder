@@ -10,7 +10,7 @@ const Navbar = () => {
     let data = e.target.value;
     dispatch({ type: "setSearchRecipe", payload: data });
 
-    console.log("state.searchrecipe ", state.searchrecipe);
+
   };
   return (
     <div className="navBar">
