@@ -12,7 +12,7 @@ let reducer = (state, action) => {
       return { ...state, recipe: [...state.recipe, action.payload] };
 
     case "setSearchRecipe":
-      return { ...state, searchrecipe: action.payload };
+      return { ...state, searchRecipe: action.payload };
 
     default:
       return state;

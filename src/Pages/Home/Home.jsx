@@ -64,16 +64,13 @@ const Home = () => {
     <div className="appContainer">
       <Navbar />
       <div className="container">
-        {/* {state.searchRecipe.length > 0
-          ?  searchResult.map((card) => {
+        {state.searchRecipe.length > 0
+          ? searchResult.map((card) => {
               return <Card item={card} />;
             })
           : foodItems.map((card) => {
               return <Card item={card} />;
-            })} */}
-        {state.searchRecipe.length > 0
-          ? "you are typing"
-          : "you are not typing"}
+            })}
       </div>
     </div>
   );
