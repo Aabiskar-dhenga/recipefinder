@@ -23,6 +23,9 @@
     background-color: rgba(56, 54, 52, 0.517);
 }
 
+.outerLink{
+    text-decoration: none;
+}
 
 .dishImg{
     width: 100%;

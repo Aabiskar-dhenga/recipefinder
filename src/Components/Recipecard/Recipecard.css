@@ -19,7 +19,7 @@
 }
 .ingredientandvitamins{
     display: flex;
-    gap: 2rem;
+    flex-direction: column;
     padding-left: 12px;
 }
 

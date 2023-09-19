@@ -1,37 +1,35 @@
 import React from "react";
 import "./Recipecard.css";
+import { useLocation } from "react-router-dom";
 
 const Recipecard = () => {
+  const { state } = useLocation();
+  console.log(state);
+
   return (
     <div className="recipeCard">
       <img
         className="foodImg"
-        src="https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        src={state?.recipe?.images?.SMALL.url}
         alt="recipeImg"
       />
-      <h1>Name: Japanese Vegan</h1>
+      <h1>Name: {state.recipe.label}</h1>
       <div className="foodInfo">
-        <p>Diet labels: Balanced</p>
-        <p>Cusition type : American</p>
-        <p>Calories: 2.32343</p>
+        <p>Diet labels: {state.recipe.dietLabels}</p>
+        <p>Cusition type : {state.recipe.mealType}</p>
+        <p>Calories: {state.recipe.calories}</p>
         <div className="ingredientandvitamins">
+          <h3 className="listingHeading">Contains this Ingredient</h3>
           <ul>
-            <h3 className="listingHeading">Contains this</h3>
-            <li>Clacium</li>
-            <li>CArba</li>
-            <li>Fat</li>
-            <li>Fiber</li>
-            <li>Folic Acid </li>
-            <li>Saturated</li>
-          </ul>
-          <ul>
-            <h3 className="listingHeading">Ingredients</h3>
-            <li>Calcium</li>
-            <li>CArba</li>
-            <li>Fat</li>
-            <li>Fiber</li>
-            <li>Folic Acid </li>
-            <li>Saturated</li>
+            {state.recipe.ingredients.map((item) => {
+              return (
+                <li>
+                  {item.text} <br />
+                  weight: {item.weight} <br />
+                  FoodCategory: {item.foodCategory}
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>

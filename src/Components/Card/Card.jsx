@@ -7,7 +7,11 @@ const Card = ({ item }) => {
     console.log("this is item", item);
   }, []);
   return (
-    <Link to="/recipe">
+    <Link
+      className="outerLink"
+      to={`/recipe/${item.recipe.label}`}
+      state={item}
+    >
       <div className="cardContainer">
         <div className="recipeImgWrapper">
           <img className="dishImg" src={item?.recipe?.images?.SMALL.url} />
